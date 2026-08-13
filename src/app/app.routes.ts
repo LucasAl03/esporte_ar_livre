@@ -7,7 +7,7 @@ import { AtletaComponent } from './component/atleta-component/atleta-component';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     {
