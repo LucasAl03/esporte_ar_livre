@@ -1,4 +1,8 @@
-import { Service } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-@Service()
-export class AtletaService {}
+import { Pessoa } from "../models/Pessoa";
+
+@Injectable()
+export class AtletaService {
+    private atletas: Pessoa[] = []
+}
