@@ -1,1 +1,34 @@
-<p>atleta-component works!</p>
+<div id="div-form">
+    <form id="form-atleta">
+        <h2>Cadastro de Atleta</h2>
+
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" class="input01" maxlength="60" placeholder="Informe seu nome" required>
+
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" class="input02" maxlength="14" placeholder="Informe seu cpf" required>
+
+        <label for="sexo">Sexo</label>
+        <input type="radio" name="sexo" id="sexoM" class="btnsSelecao" value="Masculino" required> Masculino
+        <input type="radio" name="sexo" id="sexoF" class="btnsSelecao" value="Feminino" required> Feminino
+        <input type="radio" name="sexo" id="sexoN" class="btnsSelecao" value="N" required> Não se Identificar
+
+        <label for="cep">CEP</label>
+        <input type="text" name="cep" id="cep" class="input02" maxlength="9" placeholder="Informe seu cep" required>
+
+        <label for="rua-logradouro">Rua/Logradouro</label>
+        <input type="text" name="rua-logradouro" id="rua-logradouro" class="input01" maxlength="60" placeholder="Informe sua/seu rua/logradouro" required>
+
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro" id="bairro" class="input02" maxlength="100" placeholder="Informe seu bairro" required>
+
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" id="cidade" class="input02" maxlength="60" placeholder="Informe sua cidade" required>
+
+        <label for="uf">UF</label>
+        <input type="text" name="uf" id="uf" class="input02" maxlength="2" placeholder="Informe seu uf" required>
+
+        <button type="submit" id="btnAdd">Cadastrar Atleta</button>
+        <button type="reset" id="btnLimpar">Limpar</button>
+    </form>
+</div>
