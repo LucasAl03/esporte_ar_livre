@@ -10,12 +10,12 @@ label{
     display: block;
     padding: 15px 0px;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 5px
 }
 
 input{
     height: 35px;
-    padding: 10px;
+    padding: 10px ;
     font-size: 14px;
 }
 
@@ -50,12 +50,18 @@ button{
 
 #btnAdd{
     margin-right: 10px;
-    background-color: var(--cor-botao01);
+    background-color: var(--cor-botao1);
     color: var(--branca);
+    border-radius: 8px;
 }
 
 #btnLimpar{
     margin-left: 10px;
-    background-color: var(--cor-botao02);
+    background-color: var(--cor-botao2);
     color: var(--branca);
+    border-radius: 8px;
+}
+
+button:hover{
+    opacity: 0.5;
 }
