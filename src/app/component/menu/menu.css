@@ -37,4 +37,5 @@ img{
 
 .lnk-menu:hover{
     color: var(--cor02);
+    cursor: pointer;
 }
