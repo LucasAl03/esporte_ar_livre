@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { AtletaService } from '../../service/atleta-service';
-import { Pessoa } from '../../models/Pessoa';
+import { Atleta } from '../../models/Pessoa';
 
 @Component({
   selector: 'app-atleta-component',
@@ -26,10 +26,12 @@ export class AtletaComponent {
 
   exibeDados(){
     console.log(this.nome, this.cpf, this.sexo, this.cep, this.ruaLogradouro, this.bairro, this.cidade, this.uf)
+
+    this.limparAtributos()
   }
 
   salvarAtleta(){
-    const pessoaAtleta = new Pessoa()
+    const pessoaAtleta = new Atleta()
 
     pessoaAtleta.nome = this.nome
     pessoaAtleta.cpf = this.cpf
@@ -49,9 +51,9 @@ export class AtletaComponent {
     pessoaAtleta.endereco.uf = this.uf
     */
 
-    this.atletaService.adicionar(pessoaAtleta)
+    this.atletaService.adicionarAtleta(pessoaAtleta)
 
-    this.atletaService.listar()
+    this.atletaService.listarAtleta()
 
     this.limparAtributos()
   }
