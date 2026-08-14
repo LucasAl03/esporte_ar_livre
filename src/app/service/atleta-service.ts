@@ -1,19 +1,21 @@
 import { Injectable } from "@angular/core";
 
-import { Pessoa } from "../models/Pessoa";
+import { Atleta } from "../models/Pessoa";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class AtletaService {
-    private atletas: Pessoa[] = []
+    private atletas: Atleta[] = []
 
-    adicionar (pessoa: Pessoa){
+    adicionarAtleta (atleta: Atleta){
         //ARMENGUE PARA GERAR O ID
-        pessoa.id = this.atletas.length + 1
+        atleta.id = this.atletas.length + 1
 
-        this.atletas.push(pessoa)
+        this.atletas.push(atleta)
     }
 
-    listar(){
+    listarAtleta(){
         console.log(this.atletas)
         return this.atletas
     }
@@ -22,19 +24,19 @@ export class AtletaService {
         return this.atletas.findIndex(elem => elem.id === idAtleta)
     }
 
-    remover(posArray: number){
+    removerAtleta(posArray: number){
         this.atletas.splice(1,posArray)
     }
 
-    remover2(pessoa: Pessoa){
-        this.atletas = this.atletas.filter(elem => elem.id !== pessoa.id)
+    remover2(atleta: Atleta){
+        this.atletas = this.atletas.filter(elem => elem.id !== atleta.id)
     }
 
-    alterar(pessoa: Pessoa){
-        let posArray = this.localizarAtleta(pessoa.id)
+    alterar(atleta: Atleta){
+        let posArray = this.localizarAtleta(atleta.id)
 
         if(posArray >= 0){
-            this.atletas[posArray] = pessoa
+            this.atletas[posArray] = atleta
         }
         
     }
