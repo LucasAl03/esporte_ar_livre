@@ -1,0 +1,61 @@
+#div-form{
+    width: 1000px;
+    min-height: 650px;
+    margin: 20px auto;
+    padding: 25px;
+    color: var(--cor-secundaria);
+    justify-content: center;
+}
+
+.corrida-form{
+    width: 700px;
+    height: 400px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    border-radius: 30px;
+}
+
+.input01{
+    width: 650px;
+    margin: 20px;
+    border-radius: 5px;
+    border-color: black;
+    border: solid 1px;
+}
+
+.input02{
+    width: 120px;
+    margin-left: 5px;
+}
+
+input[type = radio]{
+    display: flex;
+    flex-direction: row;
+}
+
+#div-btns{
+    margin-top: 30px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.btn-add{
+    color: var(--branca);
+    background-color: var(--cor-secundaria);
+    border-radius: 50px;
+    width: 100px;
+    border: none;
+    height: 40px;
+    font-size: 1.2em;
+}
+
+label{ 
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#descricao-corrida label{
+    margin-top: 10px;
+}
