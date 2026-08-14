@@ -1,6 +1,6 @@
 //import { Endereco } from "./endereco"
 
-export class Pessoa {
+export class Atleta {
     id: number = 0
     nome: string = ''
     cpf: string = ''
