@@ -2,7 +2,7 @@
 
     <h2>Cadastro Atleta</h2>
 
-    <form id="form-atleta" (submit)="salvarAtleta()">
+    <form id="form-atleta" (submit)="salvarAtleta()" ngNativeValidate>
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" class="input01" required maxlength="80" placeholder="Informe seu nome" [(ngModel)]="nome">
 
@@ -10,9 +10,9 @@
         <input type="text" name="cpf" id="cpf" class="input02" required maxlength="14" placeholder="Informe seu cpf" [(ngModel)]="cpf">
 
         <label for="sexo">sexo</label>
-        <input type="radio" name="sexo" id="sexoM" class="btnSelecao" value="M" [(ngModel)]="sexo"> Masculino
-        <input type="radio" name="sexo" id="sexoF" class="btnSelecao" value="F" [(ngModel)]="sexo"> Feminino
-        <input type="radio" name="sexo" id="sexoN" class="btnSelecao" value="N" [(ngModel)]="sexo"> Não se Identificar
+        <input type="radio" name="sexo" id="sexoM" class="btnSelecao" value="M" [(ngModel)]="sexo" required> Masculino
+        <input type="radio" name="sexo" id="sexoF" class="btnSelecao" value="F" [(ngModel)]="sexo" required> Feminino
+        <input type="radio" name="sexo" id="sexoN" class="btnSelecao" value="N" [(ngModel)]="sexo" required> Não se Identificar
 
         <label for="cep">CEP</label>
         <input type="text" name="cep" id="cep" class="input02" required maxlength="9" placeholder="Informe seu cep"  [(ngModel)]="cep">
