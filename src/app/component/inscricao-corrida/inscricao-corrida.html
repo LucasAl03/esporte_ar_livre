@@ -1,1 +1,42 @@
-<p>inscricao-corrida works!</p>
+<div id="formulario">
+    <h2>Inscrição na Corrida</h2>
+    <form id="form-inscricao" ngNativeValidate>
+
+        <label for="atleta-cadastro">Atleta Cadastrado</label>
+        <select name="" id="" required>
+
+        </select>
+        
+        <label for="buscarCPF">Ou Buscar por CPF</label>
+        <input type="text" name="buscarCPF" id="buscarCPF">
+
+        <select name="corrida-escolhida" id="corrida-escolhida" required>
+
+        </select>
+
+        <label for="distancia-prova"></label>
+        <input type="radio" name="distancia-prova" id="distancia5" required>5 Km
+        <input type="radio" name="distancia-prova" id="distancia10" required>10 Km
+        <input type="radio" name="distancia-prova" id="distancia25" required>25 Km
+
+        <label for="camisa-tamanho">Tamanho da Camiseta (Kit)</label>
+        <select name="camisa-tamanho" id="camisa-tamanho">
+            <option value=""></option>
+        </select>
+
+        <label for="categoria-faixaetaria">Categoria / Faixa Etária</label>
+        <input type="text" name="categoria-faixaetaria" id="categoria-faixaetaria" placeholder="Geral Masculino / 30-39 anos" required>
+
+        <div id="valor-inscricao">
+            <h3>Valor da Inscrição</h3>
+
+        </div>
+
+        <input type="checkbox" required>Li e aceito os termos do regulamento da prova e declaração de saúde.
+
+        <div id="btn-submit">
+            <button type="submit" class="btn-fin">Finalizar e Ir para o Pagamento</button>
+        </div>
+
+    </form>
+</div>
