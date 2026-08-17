@@ -1,0 +1,17 @@
+#formulario{
+    width: 80%;
+    min-height: 500px;
+    display: flex;
+    margin-left: 20px;
+}
+
+#form-inscricao{
+    width: 70%;
+    margin-top: 70px;
+    border: solid 1px;
+    border-radius: 20px;
+}
+
+h3{
+    font-size: 1.2em;
+}
