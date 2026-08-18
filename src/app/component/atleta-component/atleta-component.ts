@@ -138,6 +138,7 @@ export class AtletaComponent {
   }
 
   enviaDadosAtleta() {
+    // trnasforma a class do model Atleta em objeto para receber os dados do formulario
     const pessoaAtleta = new Atleta()
     pessoaAtleta.nome = this.nome
     pessoaAtleta.cpf = this.cpf
