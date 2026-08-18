@@ -129,6 +129,7 @@ export class AtletaComponent {
           this.cidade = objAtleta.cidade
           this.uf = objAtleta.uf
 
+          //Para detectar alteração no componente
           this.cdr.detectChanges()
         }, error: (msgErro) => {
           console.log("Erro ao Listar  o atleta ", msgErro)
