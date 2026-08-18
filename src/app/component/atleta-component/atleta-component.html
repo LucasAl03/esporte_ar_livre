@@ -2,7 +2,7 @@
 
     <h2>Cadastro Atleta</h2>
 
-    <form id="form-atleta" (submit)="salvarAtleta()" ngNativeValidate>
+    <form id="form-atleta" (submit)="enviaDadosAtleta()" ngNativeValidate>
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" class="input01" required maxlength="80" placeholder="Informe seu nome" [(ngModel)]="nome">
 
@@ -30,9 +30,12 @@
         <input type="text" name="uf" id="uf" class="input02" required maxlength="2" placeholder="Informe seu uf"  [(ngModel)]="uf">
 
         <div id="div-btns">
-            <button type="submit" id="btnAdd"> Cadastrar Atleta </button>
+            <button type="submit" id="btnAdd"> {{editar ? "Salvar Edição" : "Cadastrar Atleta"}} </button>
             <button type="reset" id="btnLimpar"> Limpar </button>
         </div>
 
     </form>
 </div>
+<!-- 
+    {{? pessoaAtleta.editar "Salvar Edição" : "Cadastrar Atleta"}}
+ -->
