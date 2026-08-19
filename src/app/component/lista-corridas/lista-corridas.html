@@ -2,7 +2,7 @@
     <h2>Corridas</h2>
 
     <div id="div-corridas">
-    @for(elem of listar(); track elem.id){
+    @for(elem of listaCorridas(); track elem.id){
         <div id="div-item">
             <span class="item-id">
                 {{elem.id}}
@@ -18,8 +18,8 @@
             </span>
 
             <span>
-                <a class="btn-excluir">Excluir</a>
-                <a class="btn-editar">Editar</a>
+                <a class="btn-excluir" (click)="excluirCorrida(elem)">Excluir</a>
+                <a class="btn-editar" (click)="buscaCorrida(elem)">Editar</a>
             </span>
         </div>    
     } @empty {
