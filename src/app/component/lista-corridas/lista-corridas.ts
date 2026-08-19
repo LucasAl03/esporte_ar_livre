@@ -13,6 +13,6 @@ export class ListaCorridas {
   constructor(private cadastroService: CorridaCadastroService){}
 
   listar(){
-    return this.cadastroService.listarCorrida()
+    return this.cadastroService.listarCorridas()
   }
 }
