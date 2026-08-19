@@ -18,8 +18,8 @@ export class CorridaComponent {
   id = 0
   
   descricaoCorrida = ''
-  dataCorrida?: Date
-  distanciaCorrida?: boolean
+  dataCorrida = ''
+  distanciaCorrida = ''
 
   editar = false
   idCorrida = 0
@@ -32,6 +32,7 @@ export class CorridaComponent {
     this.idCorrida = Number(this.route.snapshot.paramMap.get('id'))
 
     if(this.idCorrida > 0){
+      this.editar = true
       this.carregaCampo(this.idCorrida)
     }
   }
@@ -52,6 +53,40 @@ export class CorridaComponent {
       })
   }
 
+  enviaDadosCorrida(){
+    const corridaCadastrada = new Corrida()
+    corridaCadastrada.descricaoCorrida = this.descricaoCorrida
+    corridaCadastrada.dataCorrida = this.dataCorrida
+    corridaCadastrada.distanciaCorrida = this.distanciaCorrida
+
+    if(!this.editar){
+      this.corridaService.adicionarCorrida(corridaCadastrada)
+        .subscribe({
+          next: (resposta) => {
+            console.log(resposta)
+          },
+          error: (msgErro) => {
+            console.log("Erro ao cadastrar corrida", msgErro)
+          }
+        })
+    } else {
+      corridaCadastrada.id = this.idCorrida
+
+      this.corridaService.alterarCorrida(corridaCadastrada)
+        .subscribe({
+          next: (resposta) => {
+            console.log(resposta)
+            console.log(corridaCadastrada)
+          },
+          error: (msgErro) => {
+            console.log("Erro ao alterar a Corrida", msgErro)
+          }
+        })
+    }
+
+    this.limparAtributos()
+  }
+
   listaCorrida(idCorrida: number){
     this.corridaService.listarCorrida(idCorrida)
       .subscribe({
@@ -62,6 +97,12 @@ export class CorridaComponent {
           console.log("Erro ao listar corridas", msgErro)
         }
       })
+  }
+
+  limparAtributos(){
+    this.descricaoCorrida = ''
+    this.dataCorrida = ''
+    this.distanciaCorrida = ''
   }
 
   /*salvarCorrida(){
