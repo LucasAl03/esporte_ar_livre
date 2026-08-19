@@ -1,21 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Corrida } from '../models/corrida';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
     providedIn: 'root',
 })
 export class CorridaCadastroService {
-    private corridas: Corrida[] = []
 
-    adicionar(corrida: Corrida){
+    constructor(private http: HttpClient){}
+
+    adicionar(corrida: Corrida): Observable<Corrida>{
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/api/v1/corridas`
+
+        return this.http.post<Corrida>(urlApi, corrida)
+    }
+
+    /*adicionar(corrida: Corrida){
         corrida.id = this.corridas.length + 1
 
         this.corridas.push(corrida)
+    }*/
+
+    listarCorridas(){
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/api/v1/corridas`
+
+        return this.http.get<Corrida[]>(urlApi)
     }
 
-    listarCorrida(){
-        console.log(this.corridas)
-        return this.corridas
+    listarAtleta(idCorrida: number):Observable<Corrida>{
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/api/v1/corridas/${idCorrida}`
+
+        return this.http.get<Corrida>(urlApi)
     }
 }
