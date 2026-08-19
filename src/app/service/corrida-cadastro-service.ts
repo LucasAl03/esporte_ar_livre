@@ -11,8 +11,8 @@ export class CorridaCadastroService {
 
     constructor(private http: HttpClient){}
 
-    adicionar(corrida: Corrida): Observable<Corrida>{
-        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/api/v1/corridas`
+    adicionarCorrida(corrida: Corrida): Observable<Corrida>{
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/esportearlivre/corridas`
 
         return this.http.post<Corrida>(urlApi, corrida)
     }
@@ -34,4 +34,18 @@ export class CorridaCadastroService {
 
         return this.http.get<Corrida>(urlApi)
     }
+
+    excluirCorrida(corrida: Corrida): Observable<Corrida>{
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/esportearlivre/corridas/${corrida.id}`
+
+        return this.http.delete<Corrida>(urlApi)
+    }
+
+    alterarCorrida(corrida: Corrida):Observable<Corrida>{
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/esportearlivre/corridas/${corrida.id}`
+
+        return this.http.put<Corrida>(urlApi, corrida)
+    }
+
+    
 }
