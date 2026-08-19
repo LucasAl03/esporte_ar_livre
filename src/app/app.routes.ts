@@ -27,6 +27,10 @@ export const routes: Routes = [
         component: CorridaComponent
     },
     {
+    path: "cadastroCorrida/:id",
+    component: CorridaComponent
+    },
+    {
         path: "listaCorrida",
         component: ListaCorridas
     },
@@ -39,7 +43,7 @@ export const routes: Routes = [
         component: AtletaListaComponent
     },
     {
-        path: "cadastrarAtleta/id",
+        path: "cadastrarAtleta/:id",
         component: AtletaComponent
     }
 ];
