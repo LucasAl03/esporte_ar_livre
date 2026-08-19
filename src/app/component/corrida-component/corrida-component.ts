@@ -18,7 +18,7 @@ export class CorridaComponent {
   id = 0
   
   descricaoCorrida = ''
-  dataCorrida = ''
+  dataCorrida?: Date
   distanciaCorrida?: boolean
 
   editar = false
@@ -37,7 +37,7 @@ export class CorridaComponent {
   }
 
   carregaCampo(idCorrida: number){
-    this.corridaService.listarCorridas(idCorrida)
+    this.corridaService.listarCorrida(idCorrida)
       .subscribe({
         next: (objCorrida) => {
           this.id = objCorrida.id
@@ -52,7 +52,19 @@ export class CorridaComponent {
       })
   }
 
-  salvarCorrida(){
+  listaCorrida(idCorrida: number){
+    this.corridaService.listarCorrida(idCorrida)
+      .subscribe({
+        next: (dados) => {
+          console.table(dados)
+        },
+        error: (msgErro) => {
+          console.log("Erro ao listar corridas", msgErro)
+        }
+      })
+  }
+
+  /*salvarCorrida(){
     const cadastroCorrida = new Corrida()
 
     cadastroCorrida.descricaoCorrida = this.descricaoCorrida
@@ -70,5 +82,5 @@ export class CorridaComponent {
     this.descricaoCorrida = ''
     this.dataCorrida = ''
     
-  }
+  }*/
 }

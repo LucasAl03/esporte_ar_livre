@@ -24,13 +24,13 @@ export class CorridaCadastroService {
     }*/
 
     listarCorridas(){
-        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/api/v1/corridas`
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/esportearlivre/corridas`
 
         return this.http.get<Corrida[]>(urlApi)
     }
 
-    listarAtleta(idCorrida: number):Observable<Corrida>{
-        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/api/v1/corridas/${idCorrida}`
+    listarCorrida(idCorrida: number):Observable<Corrida>{
+        const urlApi = `https://6a84f0ea53754283b0b8cbb0.mockapi.io/esportearlivre/corridas/${idCorrida}`
 
         return this.http.get<Corrida>(urlApi)
     }
