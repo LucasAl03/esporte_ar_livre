@@ -1,6 +1,6 @@
 export class Corrida{
     id: number = 0
-    descricaoCorrida: string =''
+    descricaoCorrida: string = ''
     dataCorrida?: string
-    distanciaCorrida: string = ''
+    distanciaCorrida?: boolean
 }
