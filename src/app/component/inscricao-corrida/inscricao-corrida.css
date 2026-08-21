@@ -1,51 +1,52 @@
 #formulario{
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--branco);
-    border-radius: 12px;
+    width: 70%;
+    height: 30px;
+    min-width: 600px;
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
 }
 
 #form-inscricao{
-    padding-left: 10px;
-    width: 70%;
-    height: 380px;
-    margin-top: 70px;
-    border: solid 1px;
-    border-radius: 20px;
     display: flex;
+    
     flex-direction: column;
+    border: solid 1px;
+    border-radius: 6px;
+    padding: 10px 10px;
+    margin-top: 50px;
 }
 
-#kitTamanho{
-    width: 150px;
-}
-
-#div-atleta{
+input, select{
     margin-top: 10px;
-    padding-bottom: 20px;
+    padding: 0px 10px;
+    border-radius: 6px;
+    justify-content: center;
+    border: solid 1px;
+    margin-bottom: 10px;
 }
 
-#div-corrida{
-    margin-top: 10px;
-    padding-bottom: 20px;
+#termosServicos{
+    display: inline-flex;
 }
 
-h3{
-    font-size: 1.2em;
+#btn-submit{
+
 }
 
 .btn-fin{
-    margin-top: 40px;
-    border: none;
+    margin-top: 5px;
+    padding: 0px 10px;
+    height: 30px;
     background-color: var(--cor01);
     color: var(--branca);
-    border-radius: 8px;
-    width: 200px;
-    height: 30px;
+    border: none;
+    border-radius: 6px;
 }
 
 .btn-fin:hover{
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.8;
 }
