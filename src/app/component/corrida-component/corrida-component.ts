@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Corrida } from '../../models/corrida';
 import { CorridaCadastroService } from '../../service/corrida-cadastro-service'; 
 import { ActivatedRoute } from '@angular/router';
+import { getActiveConsumer } from '@angular/core/primitives/signals';
 
 @Component({
   selector: 'app-corrida-component',
@@ -19,13 +20,15 @@ export class CorridaComponent {
   
   descricaoCorrida = ''
   dataCorrida = ''
-  distanciaCorrida = ''
+  distancia05 = false
+  distancia10 = false
+  distancia25 = false
 
   editar = false
   idCorrida = 0
 
   exibeDados(){
-    console.log(this.descricaoCorrida, this.dataCorrida, this.distanciaCorrida)
+    console.log(this.descricaoCorrida, this.dataCorrida, this.distancia05, this.distancia10, this.distancia25)
   }
 
   ngOnInit(){
@@ -44,7 +47,9 @@ export class CorridaComponent {
           this.id = objCorrida.id
           this.descricaoCorrida = objCorrida.descricaoCorrida
           this.dataCorrida = objCorrida.dataCorrida
-          this.distanciaCorrida = objCorrida.distanciaCorrida
+          this.distancia05 = objCorrida.distancia05
+          this.distancia10 = objCorrida.distancia10
+          this.distancia25 = objCorrida.distancia25
 
           this.cdr.detectChanges()
         }, error: (msgErro) => {
@@ -57,7 +62,9 @@ export class CorridaComponent {
     const corridaCadastrada = new Corrida()
     corridaCadastrada.descricaoCorrida = this.descricaoCorrida
     corridaCadastrada.dataCorrida = this.dataCorrida
-    corridaCadastrada.distanciaCorrida = this.distanciaCorrida
+    corridaCadastrada.distancia05 = this.distancia05
+    corridaCadastrada.distancia10 = this.distancia10
+    corridaCadastrada.distancia25 = this.distancia25
 
     if(!this.editar){
       this.corridaService.adicionarCorrida(corridaCadastrada)
@@ -102,7 +109,9 @@ export class CorridaComponent {
   limparAtributos(){
     this.descricaoCorrida = ''
     this.dataCorrida = ''
-    this.distanciaCorrida = ''
+    this.distancia05 = false
+    this.distancia10 = false
+    this.distancia25 = false
   }
 
   /*salvarCorrida(){
@@ -125,3 +134,49 @@ export class CorridaComponent {
     
   }*/
 }
+
+/* Codigo do Professor
+//DEFININDO OS ATRIBUTOS DO COMPONENTE CorridaComponent
+  id = 0
+  descricao_corrida = ''
+  data_corrida = ''
+  distancia5km = false
+  distancia10km = false
+  distancia25km = false
+
+  constructor(private corridaService: CorridaService) { }
+
+  //FUNÇÃO PARA CADASTRAR E ALTERAR
+  dadosFormulario() {
+    const corrida = new Corrida()
+    corrida.descricao_corrida = this.descricao_corrida
+    corrida.data_corrida = this.data_corrida
+    corrida.distancia5km = this.distancia5km
+    corrida.distancia10km = this.distancia10km
+    corrida.distancia25km = this.distancia25km
+
+    this.corridaService.salvarCorrida(corrida)
+      .subscribe({
+        next: (respostaAPI) => {
+          return respostaAPI
+        },
+        error: (msgErro) => {
+          return msgErro
+        }
+      })
+
+    this.limparAtributos()
+
+  }
+
+  //LIMPAR OS ATRIBUTOS
+  limparAtributos() {
+    this.descricao_corrida = ''
+    this.data_corrida = ''
+    this.distancia5km = false
+    this.distancia10km = false
+    this.distancia25km = false
+  }
+
+}
+*/
