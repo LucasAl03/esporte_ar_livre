@@ -5,7 +5,18 @@
     margin-left: 20px;
 }
 
+:root{
+    --cor-primaria: #92400E;
+    --cor-secundaria: #0369A1;
+    --branca:#ffffff;
+    --cor-botao1: #0369A1;
+    --cor-botao2: #F97316;
+    --cor01: #166534;
+    --cor02: #FACC15;
+}
+
 #form-inscricao{
+    padding-left: 10px;
     width: 70%;
     margin-top: 70px;
     border: solid 1px;
@@ -21,12 +32,16 @@ h3{
 }
 
 .btn-fin{
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 40px;
     border: none;
     background-color: var(--cor01);
     color: var(--branca);
     border-radius: 8px;
     width: 200px;
     height: 30px;
+}
+
+.btn-fin:hover{
+    cursor: pointer;
+    opacity: 0.9;
 }
