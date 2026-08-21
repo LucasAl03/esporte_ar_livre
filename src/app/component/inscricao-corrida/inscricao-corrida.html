@@ -1,36 +1,41 @@
 <div id="formulario">
     <h2>Inscrição na Corrida</h2>
-    <form id="form-inscricao" ngNativeValidate>
+    <form id="form-inscricao" (ngSubmit)="exibeDados()" ngNativeValidate>
 
-        <label for="atleta-cadastro">Atleta Cadastrado</label>
-        <select name="atleta-cadastro" id="atleta-cadastro" >
-            @for (elem of listaAtletas(); track elem.id){
-                    <option value="" selected>Selecione um Atleta</option>
-                    <option value=""> {{elem.nome}} </option>
-            } @empty{
-                <option value="">Lista Vazia</option>
-            }
-        </select>
+        <div id="div-atleta">
+
+            <span><label for="atletaCadastrado">Atleta Cadastrado</label></span>
+            <select name="atletaCadastrado" id="atletaCadastrado"[(ngModel)]="atletaCadastrado">
+                <option value="" selected>Selecione um Atleta</option>
+                @for (elem of listaAtletas(); track elem.id){
+                    <option value="{{elem.nome}}"> {{elem.nome}} </option>
+                } @empty{
+                    <option value="">Lista Vazia</option>
+                }
+            </select>
         
-        <label for="buscarCPF">Ou Buscar por CPF</label>
-        <input type="text" name="buscarCPF" id="buscarCPF">
+            <label for="inputCPF">Ou Buscar por CPF</label>
+            <input type="text" name="inputCPF" id="inputCPF" maxlength="11" [(ngModel)]="inputCpf">
+        </div>
 
-        <select name="corrida-escolhida" id="corrida-escolhida" required>
-            <option value="">Selecione uma Corrida</option>
-            @for (elem of listaCorridas(); track elem.id){
-                <option value="">{{elem.descricaoCorrida}}</option>
-            } @empty{
-                <option value="">Lista Vazia</option>
-            }
-        </select>
+        <div id="div-corrida">
+            <select name="corridaEscolhida" id="corridaEscolhida" required [(ngModel)]="corridaEscolhida">
+                <option value="">Selecione uma Corrida</option>
+                @for (elem of listaCorridas(); track elem.id){
+                    <option value="{{elem.descricaoCorrida}}">{{elem.descricaoCorrida}}</option>
+                } @empty{
+                    <option value="">Lista Vazia</option>
+                }
+            </select>
+        
 
-        <label for="distancia-prova"></label>
-        <input type="radio" name="distancia-prova" id="distancia5" value="5 Km" required>5 Km
-        <input type="radio" name="distancia-prova" id="distancia10" value="10 Km" required>10 Km
-        <input type="radio" name="distancia-prova" id="distancia25" value="25 Km" required>25 Km
-
-        <label for="camisa-tamanho">Tamanho da Camiseta (Kit)</label>
-        <select name="camisa-tamanho" id="camisa-tamanho">
+        <label for="distanciaProva"></label>
+        <input type="radio" name="distanciaProva" id="distancia5" value="5 Km" [(ngModel)]="distanciaProva" required>5 Km
+        <input type="radio" name="distanciaProva" id="distancia10" value="10 Km" [(ngModel)]="distanciaProva" required>10 Km
+        <input type="radio" name="distanciaProva" id="distancia25" value="25 Km" [(ngModel)]="distanciaProva" required>25 Km
+</div>
+        <label for="kitTamanho">Tamanho da Camiseta (Kit)</label>
+        <select name="kitTamanho" id="kitTamanho" [(ngModel)]="kitTamanho">
             <option value="" >Escolha um tamanho</option>
             <option value="PP">PP</option>
             <option value="P">P</option>
@@ -40,14 +45,14 @@
         </select>
 
         <label for="categoria-faixaetaria">Categoria / Faixa Etária</label>
-        <input type="text" name="categoria-faixaetaria" id="categoria-faixaetaria" placeholder="Geral Masculino / 30-39 anos" required>
+        <input type="text" name="categoria-faixaetaria" id="categoria-faixaetaria" placeholder="Geral Masculino / 30-39 anos" [(ngModel)]="categoriaFaixaetaria" required>
 
         <div id="valor-inscricao">
             <h3>Valor da Inscrição</h3>
             <span>R$ 89,90</span>
         </div>
 
-        <input type="checkbox" required>Li e aceito os termos do regulamento da prova e declaração de saúde.
+        <input type="checkbox" id="termosServicos" name="termosServicos" [(ngModel)]="termosServicos" required>Li e aceito os termos do regulamento da prova e declaração de saúde.
 
         <div id="btn-submit">
             <button type="submit" class="btn-fin">Finalizar e Ir para o Pagamento</button>
