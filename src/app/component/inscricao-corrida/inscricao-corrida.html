@@ -3,9 +3,9 @@
     <form id="form-inscricao" ngNativeValidate>
 
         <label for="atleta-cadastro">Atleta Cadastrado</label>
-        <select name="atleta-cadastro" id="atleta-cadastro" [(ngModel)]="atletaCadastro">
-            <option value="" selected>Selecione um Atleta</option>
+        <select name="atleta-cadastro" id="atleta-cadastro" >
             @for (elem of listaAtletas(); track elem.id){
+                    <option value="" selected>Selecione um Atleta</option>
                     <option value=""> {{elem.nome}} </option>
             } @empty{
                 <option value="">Lista Vazia</option>
