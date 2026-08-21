@@ -1,23 +1,15 @@
 #formulario{
-    width: 80%;
-    min-height: 500px;
-    display: flex;
-    margin-left: 20px;
-}
-
-:root{
-    --cor-primaria: #92400E;
-    --cor-secundaria: #0369A1;
-    --branca:#ffffff;
-    --cor-botao1: #0369A1;
-    --cor-botao2: #F97316;
-    --cor01: #166534;
-    --cor02: #FACC15;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--branco);
+    border-radius: 12px;
 }
 
 #form-inscricao{
     padding-left: 10px;
     width: 70%;
+    height: 380px;
     margin-top: 70px;
     border: solid 1px;
     border-radius: 20px;
@@ -25,7 +17,19 @@
     flex-direction: column;
 }
 
+#kitTamanho{
+    width: 150px;
+}
 
+#div-atleta{
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+#div-corrida{
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
 
 h3{
     font-size: 1.2em;
