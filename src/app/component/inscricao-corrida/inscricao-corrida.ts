@@ -3,23 +3,54 @@ import { Corrida } from '../../models/corrida';
 import { CorridaCadastroService } from '../../service/corrida-cadastro-service';
 import { Atleta } from '../../models/Pessoa';
 import { AtletaService } from '../../service/atleta-service';
+import { Inscricao } from '../../models/inscricao';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-inscricao-corrida',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './inscricao-corrida.html',
   styleUrl: './inscricao-corrida.css',
 })
 export class InscricaoCorrida {
 
-  atletaCadastro: string = ''
-
   constructor (private httpCorrida: CorridaCadastroService, private httpAtleta: AtletaService){}
+
+  atletaCadastrado = ''
+  corridaEscolhida = ''
+  distanciaProva = ''
+  kitTamanho = ''
+  categoriaFaixaetaria = ''
+  termosServicos = false
+
+  inputCpf = ''
 
   listaCorridas = signal<Corrida[]>([])
 
   listaAtletas = signal<Atleta[]>([])
 
+  listaInscricao = signal<Inscricao[]>([])
+
+  exibeDados(){
+    console.log(this.atletaCadastrado, '—', this.corridaEscolhida, '—', this.distanciaProva, '—', this.kitTamanho, '—', this.categoriaFaixaetaria, '—', this.termosServicos)
+
+    
+
+    this.limparAtributos();
+  }
+
+  limparAtributos(){
+    this.atletaCadastrado = ''
+    this.corridaEscolhida = ''
+    this.distanciaProva = ''
+    this.kitTamanho = ''
+    this.categoriaFaixaetaria = ''
+    this.termosServicos = false
+  }
+
+
+
+  // Codigos para listar os atletas e corridas no formulario
   ngOnInit(){
     this.listarCorridas();
     this.listarAtletas();
