@@ -11,7 +11,7 @@
                 {{elem.descricaoCorrida}}
             </span>
             <span class="item-data">
-                {{elem.dataCorrida}}
+                {{elem.dataCorrida.split('-').reverse().join('/')}}
             </span>
             <span class="item-distancia">
                 {{elem.distancia05 ? '5 Km' : ''}} {{elem.distancia10 ? '10 Km' : ''}} {{elem.distancia25 ? '25 Km' : ''}}
