@@ -1,14 +1,16 @@
+<h2>Inscrição na Corrida</h2>
+
 <div id="formulario">
-    <h2>Inscrição na Corrida</h2>
+    
     <form id="form-inscricao" (ngSubmit)="exibeDados()" ngNativeValidate>
 
         <div id="div-atleta">
 
-            <span><label for="atletaCadastrado">Atleta Cadastrado</label></span>
+            <label for="atletaCadastrado">Atleta Cadastrado</label>
             <select name="atletaCadastrado" id="atletaCadastrado"[(ngModel)]="atletaCadastrado">
                 <option value="" selected>Selecione um Atleta</option>
                 @for (elem of listaAtletas(); track elem.id){
-                    <option value="{{elem.nome}}"> {{elem.nome}} </option>
+                    <option value="{{elem.id}}"> {{elem.nome}} </option>
                 } @empty{
                     <option value="">Lista Vazia</option>
                 }
@@ -22,7 +24,7 @@
             <select name="corridaEscolhida" id="corridaEscolhida" required [(ngModel)]="corridaEscolhida">
                 <option value="">Selecione uma Corrida</option>
                 @for (elem of listaCorridas(); track elem.id){
-                    <option value="{{elem.descricaoCorrida}}">{{elem.descricaoCorrida}}</option>
+                    <option value="{{elem.id}}">{{elem.descricaoCorrida}} — {{elem.dataCorrida.split('-').reverse().join('/')}}</option>
                 } @empty{
                     <option value="">Lista Vazia</option>
                 }
@@ -30,7 +32,7 @@
         
 
         <label for="distanciaProva"></label>
-        <input type="radio" name="distanciaProva" id="distancia5" value="5 Km" [(ngModel)]="distanciaProva" required>5 Km
+        <input type="radio" name="distanciaProva" id="distancia5" value="5 Km" [(ngModel)]="distanciaProva" rquired>5 Km
         <input type="radio" name="distanciaProva" id="distancia10" value="10 Km" [(ngModel)]="distanciaProva" required>10 Km
         <input type="radio" name="distanciaProva" id="distancia25" value="25 Km" [(ngModel)]="distanciaProva" required>25 Km
 </div>
