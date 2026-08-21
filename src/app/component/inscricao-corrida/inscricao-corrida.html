@@ -3,25 +3,40 @@
     <form id="form-inscricao" ngNativeValidate>
 
         <label for="atleta-cadastro">Atleta Cadastrado</label>
-        <select name="" id="" required>
-
+        <select name="atleta-cadastro" id="atleta-cadastro" [(ngModel)]="atletaCadastro">
+            <option value="" selected>Selecione um Atleta</option>
+            @for (elem of listaAtletas(); track elem.id){
+                    <option value=""> {{elem.nome}} </option>
+            } @empty{
+                <option value="">Lista Vazia</option>
+            }
         </select>
         
         <label for="buscarCPF">Ou Buscar por CPF</label>
         <input type="text" name="buscarCPF" id="buscarCPF">
 
         <select name="corrida-escolhida" id="corrida-escolhida" required>
-
+            <option value="">Selecione uma Corrida</option>
+            @for (elem of listaCorridas(); track elem.id){
+                <option value="">{{elem.descricaoCorrida}}</option>
+            } @empty{
+                <option value="">Lista Vazia</option>
+            }
         </select>
 
         <label for="distancia-prova"></label>
-        <input type="radio" name="distancia-prova" id="distancia5" required>5 Km
-        <input type="radio" name="distancia-prova" id="distancia10" required>10 Km
-        <input type="radio" name="distancia-prova" id="distancia25" required>25 Km
+        <input type="radio" name="distancia-prova" id="distancia5" value="5 Km" required>5 Km
+        <input type="radio" name="distancia-prova" id="distancia10" value="10 Km" required>10 Km
+        <input type="radio" name="distancia-prova" id="distancia25" value="25 Km" required>25 Km
 
         <label for="camisa-tamanho">Tamanho da Camiseta (Kit)</label>
         <select name="camisa-tamanho" id="camisa-tamanho">
-            <option value=""></option>
+            <option value="" >Escolha um tamanho</option>
+            <option value="PP">PP</option>
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
         </select>
 
         <label for="categoria-faixaetaria">Categoria / Faixa Etária</label>
@@ -29,7 +44,7 @@
 
         <div id="valor-inscricao">
             <h3>Valor da Inscrição</h3>
-
+            <span>R$ 89,90</span>
         </div>
 
         <input type="checkbox" required>Li e aceito os termos do regulamento da prova e declaração de saúde.

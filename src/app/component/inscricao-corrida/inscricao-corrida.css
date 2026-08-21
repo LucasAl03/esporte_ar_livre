@@ -10,8 +10,23 @@
     margin-top: 70px;
     border: solid 1px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
+
+
 
 h3{
     font-size: 1.2em;
+}
+
+.btn-fin{
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    background-color: var(--cor01);
+    color: var(--branca);
+    border-radius: 8px;
+    width: 200px;
+    height: 30px;
 }
